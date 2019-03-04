@@ -1,3 +1,4 @@
+#R 3.5.1
 library(rvest)
 library(quantmod)
 library(clusterCrit)
