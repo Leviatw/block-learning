@@ -7,8 +7,8 @@ library(ape)
 library(data.table)
 library(fGarch)
 
-############################################################################################################
-#Do not need run, download and preprocess the data, notice that the list of NASDAQ 100 stocks may be updated.
+########################################################################################################################
+#Do not need run, download and preprocess the data, notice that the list of NASDAQ 100 stocks  is rebalanced once a year.
 #We download the data at December, 2018.
 
 symbols <- read_html("https://www.cnbc.com/nasdaq-100/")
@@ -74,6 +74,11 @@ full.names <- as.vector(NASDAQ100$Name)
 sector <- as.vector(NASDAQ100$Sector)
 industry <- as.vector(NASDAQ100$industry)
 table(sector)
+#sector
+#        Capital Goods Consumer Non-Durables     Consumer Services           Health Care 
+#                    4                     5                    23                    18 
+#        Miscellaneous      Public Utilities            Technology        Transportation 
+#                    6                     3                    41                     3 
 #load the stock names
 colnames(Xr) <- readRDS("symbols")
 symbols.nasdaq<-colnames(Xr)
