@@ -88,7 +88,7 @@ d <- ncol(Xr)
  
 ###show the sector classification
 kmt<-as.integer(factor(sector))
-lapply(1:max(kmt),function(nc) names.nasdaq[nc==kmt])
+lapply(1:max(kmt),function(nc) symbols.nasdaq[nc==kmt])
 
 #kendall tau correlation matrix
 Tau.hat<-cor.fk(Xr)
@@ -105,7 +105,7 @@ Tau.eg<-eigen(Tau.hat/d)
 plot(Tau.eg$values) 
 Tau.eg$values[1:15]
 
-k<-sum(Tau.eg$values>0.08/max(log(n),log(p)))
+k<-sum(Tau.eg$values>0.08/max(log(n),log(d)))
 k
 
 
